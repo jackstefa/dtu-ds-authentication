@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloServant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +22,19 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2oASEYPXAXPaDKWwkNgjlp47lq3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,20 +44,24 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ApplicationServer.executor": "Run",
+    "Application.Client.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/federicomarra/Documents/GitHub/ds-authentication",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.ApplicationServer">
     <configuration name="ApplicationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dk.dtu.ds.ApplicationServer" />
       <module name="dtu-ds-authentication" />
@@ -107,6 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730310777139</updated>
       <workItem from="1730310778175" duration="742000" />
+      <workItem from="1730740446697" duration="2277000" />
     </task>
     <servers />
   </component>
