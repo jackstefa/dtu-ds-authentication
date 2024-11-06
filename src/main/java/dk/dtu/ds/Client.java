@@ -15,20 +15,20 @@ public class Client {
      */
     public static void main(String[] args) throws MalformedURLException, NotBoundException, RemoteException {
 
-        // Saving the services in a map
-        Map<String, HelloService> serviceMap = new HashMap<>();
-        for (String serverBind: Config.SERVER_BINDS) {
-            // Look up the remote service and add it to the map
-            HelloService service = (HelloService) Naming.lookup("rmi://localhost:" + Config.SERVER_PORT +"/" + serverBind);
-            serviceMap.put(serverBind, service);
+        AuthenticationService authService = (AuthenticationService) Naming.lookup(Config.AUTHENTICATION_ENDPOINT);
+
+        String token;
+
+        try {
+            token = authService.login("username", "password");
+        } catch (RemoteException e) {
+            System.out.println("Login failed");
+            return;
         }
 
-        // Invoking the services saved in the map
-        for (String serverBind: Config.SERVER_BINDS) {
-            // Retrieve the service from the map and invoke its echo method
-            HelloService service = serviceMap.get(serverBind);
-            System.out.println("--- " + service.echo("Hey Server!"));
-        }
+        PrintService printService = (PrintService) Naming.lookup(Config.PRINT_ENDPOINT);
+
+        printService.print(token, "file", "printer");
 
     }
 

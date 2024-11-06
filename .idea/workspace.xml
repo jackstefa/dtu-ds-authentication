@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintServant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloService.java" beforeDir="false" />
     </list>
+    <list id="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" name="Changes by amirhosein" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="847d6ad0-d71a-45a1-8126-3542f36782e1" name="Changes by federicomarra" comment="" />
+    <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,10 +64,18 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dk.dtu.ds" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="ApplicationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dk.dtu.ds.ApplicationServer" />
@@ -90,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.ApplicationServer" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>

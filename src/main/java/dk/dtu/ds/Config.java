@@ -6,8 +6,13 @@ public class Config {
      */
     public static final int SERVER_PORT = 5099;
 
-    /**
-     * The server binds which the client will look up and has access to.
-     */
-    public static final String[] SERVER_BINDS = {"hello", "ciao", "salut", "salam"};
+    public static final String ENDPOINT_PREFIX = "rmi://localhost" + SERVER_PORT + "/";
+
+    public static final String AUTH_BIND = "auth";
+
+    public static final String PRINT_BIND = "print";
+
+    public static final String AUTHENTICATION_ENDPOINT = ENDPOINT_PREFIX + AUTH_BIND;
+
+    public static final String PRINT_ENDPOINT = ENDPOINT_PREFIX + PRINT_BIND;
 }

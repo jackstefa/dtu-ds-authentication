@@ -13,13 +13,13 @@ public class ApplicationServer {
         // Creates a registry on the specified port
         Registry registry = LocateRegistry.createRegistry(Config.SERVER_PORT);
 
-        // Iterates over the server bindings defined in the configuration
-        for (String serverBind : Config.SERVER_BINDS) {
-            // Prints the binding information to the console
-            System.out.println("Binding " + serverBind + " added to the registry!");
+        registry.rebind(Config.PRINT_BIND, new PrintServant());
 
-            // Binds the HelloServant instance to the registry with the specified server binding name
-            registry.rebind(serverBind, new HelloServant());
+        registry.rebind(Config.AUTH_BIND, new AuthenticationServant());
+
+        System.out.println("Server ready!");
+        for (String reg: registry.list()) {
+            System.out.println("List of bindings " + reg);
         }
     }
 }
