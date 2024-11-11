@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="First project meeting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/TokenGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/HelloService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" afterDir="false" />
     </list>
     <list id="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" name="Changes by amirhosein" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
     </list>
-    <list id="847d6ad0-d71a-45a1-8126-3542f36782e1" name="Changes by federicomarra" comment="" />
+    <list id="fb819aba-5e86-4504-a6df-3bdf93e442cf" name="Changes by federicomarra" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" afterDir="false" />
+    </list>
     <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +32,53 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jackstefa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jackstefa/dtu-ds-authentication.git&quot;,
+    &quot;accountId&quot;: &quot;febb9908-f6a3-4f27-94c5-aae5af9602fd&quot;
+  }
+}</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
+        <range start1="6" end1="13" start2="7" end2="9" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="13" changelist="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" />
+        <range start1="3" end1="4" start2="14" end2="20" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="5" end1="6" start2="21" end2="22" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="7" end1="8" start2="23" end2="28" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="9" end1="11" start2="29" end2="33" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
+        <range start1="13" end1="14" start2="35" end2="53" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="15" end1="19" start2="54" end2="63" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="25" end1="27" start2="69" end2="84" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="28" end1="28" start2="85" end2="150" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="11" changelist="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" />
+        <range start1="17" end1="18" start2="23" end2="27" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="25" end1="25" start2="34" end2="55" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -48,29 +92,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApplicationServer.executor": "Run",
-    "Application.Client.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/federicomarra/Documents/GitHub/ds-authentication",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApplicationServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/federicomarra/Documents/GitHub/ds-authentication&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dk.dtu.ds" />
@@ -128,10 +172,36 @@
       <updated>1730310777139</updated>
       <workItem from="1730310778175" duration="742000" />
       <workItem from="1730740446697" duration="3635000" />
+      <workItem from="1731315648375" duration="1187000" />
+      <workItem from="1731316862429" duration="6607000" />
     </task>
+    <task id="LOCAL-00001" summary="First project meeting">
+      <option name="closed" value="true" />
+      <created>1730901328322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730901328322</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First project meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="First project meeting" />
   </component>
 </project>
