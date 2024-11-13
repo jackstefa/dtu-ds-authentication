@@ -12,7 +12,7 @@ public class Config {
 
     public static final String PRINT_BIND = "print";
 
-    public static final String AUTHENTICATION_ENDPOINT = ENDPOINT_PREFIX + AUTH_BIND;
+    public static final String AUTH_ENDPOINT = ENDPOINT_PREFIX + AUTH_BIND;
 
     public static final String PRINT_ENDPOINT = ENDPOINT_PREFIX + PRINT_BIND;
 
