@@ -6,7 +6,7 @@ public class Config {
      */
     public static final int SERVER_PORT = 5099;
 
-    public static final String ENDPOINT_PREFIX = "rmi://localhost" + SERVER_PORT + "/";
+    public static final String ENDPOINT_PREFIX = "rmi://localhost:" + SERVER_PORT + "/";
 
     public static final String AUTH_BIND = "auth";
 
