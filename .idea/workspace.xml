@@ -6,21 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/ApplicationServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/PrintService.java" afterDir="false" />
     </list>
     <list id="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" name="Changes by amirhosein" comment="" />
-    <list id="fb819aba-5e86-4504-a6df-3bdf93e442cf" name="Changes by federicomarra" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" afterDir="false" />
-    </list>
-    <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
-    </list>
+    <list id="fb819aba-5e86-4504-a6df-3bdf93e442cf" name="Changes by federicomarra" comment="" />
+    <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,34 +44,6 @@
     &quot;accountId&quot;: &quot;febb9908-f6a3-4f27-94c5-aae5af9602fd&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java">
-      <ranges>
-        <range start1="8" end1="8" start2="8" end2="9" changelist="cf09c790-5c02-4297-9220-62ad69c3da82" />
-        <range start1="10" end1="10" start2="11" end2="14" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="11" end1="15" start2="15" end2="17" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="16" end1="32" start2="18" end2="21" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="34" end1="34" start2="23" end2="54" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java">
-      <ranges>
-        <range start1="19" end1="20" start2="19" end2="20" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="35" end1="37" start2="35" end2="37" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="48" end1="50" start2="48" end2="51" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="51" end1="51" start2="52" end2="53" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="54" end1="67" start2="56" end2="68" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="69" end1="72" start2="70" end2="71" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="76" end1="76" start2="75" end2="76" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="77" end1="79" start2="77" end2="79" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="82" end1="83" start2="82" end2="83" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
-        <range start1="87" end1="88" start2="87" end2="88" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="95" end1="98" start2="95" end2="98" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="115" end1="128" start2="115" end2="128" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-        <range start1="130" end1="149" start2="130" end2="130" changelist="fb819aba-5e86-4504-a6df-3bdf93e442cf" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -148,8 +113,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.ApplicationServer" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
