@@ -5,70 +5,86 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 public class PrintServant extends UnicastRemoteObject implements PrintService {
+    private final AuthenticationService authService;
 
-    /**
-     * Constructs a new HelloServant instance and exports it on an anonymous port.
-     *
-     * @throws RemoteException If a remote communication error occurs.
-     */
-    protected PrintServant() throws RemoteException {
+    public PrintServant(AuthenticationService authService) throws RemoteException {
         super();
+        this.authService = authService;
     }
 
-    /**
-     * Returns a string that is prefixed with "From server: ".
-     *
-     * @param input The input string to be echoed.
-     * @return The echoed string with the server prefix.
-     * @throws RemoteException If a remote communication error occurs.
-     */
     public String echo(String input) throws RemoteException {
         return "From server: " + input;
     }
 
     @Override
-    public void print(String filename, String printer) throws RemoteException {
+    public void print(String token, String filename, String printer) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Printing " + filename + " on " + printer);
     }
 
     @Override
-    public List<String> queue(String printer) throws RemoteException {
-        return List.of();
+    public List<String> queue(String token, String printer) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
+
+        return List.of("Job 1", "Job 2", "Job 3");
     }
 
     @Override
-    public void topQueue(String printer, int job) throws RemoteException {
+    public void topQueue(String token, String printer, int job) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Moving job " + job + " to the top of the queue");
     }
 
     @Override
-    public void start() throws RemoteException {
+    public void start(String token) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Starting print service");
     }
 
     @Override
-    public void stop() throws RemoteException {
+    public void stop(String token) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Stopping print service");
     }
 
     @Override
-    public void restart() throws RemoteException {
+    public void restart(String token) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Restarting print service");
     }
 
     @Override
-    public String status(String printer) throws RemoteException {
-        return "";
+    public String status(String token, String printer) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
+
+        return "Printer " + printer + " is ready";
     }
 
     @Override
-    public String readConfig(String parameter) throws RemoteException {
-        return "";
+    public String readConfig(String token, String parameter) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
+
+        return "Value of " + parameter;
     }
 
     @Override
-    public void setConfig(String parameter, String value) throws RemoteException {
+    public void setConfig(String token, String parameter, String value) throws RemoteException {
+        if (!authService.isTokenValid(token))
+            throw new RemoteException("Invalid token");
 
+        System.out.println("Setting " + parameter + " to " + value);
     }
-
 }

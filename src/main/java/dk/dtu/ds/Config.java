@@ -15,4 +15,8 @@ public class Config {
     public static final String AUTHENTICATION_ENDPOINT = ENDPOINT_PREFIX + AUTH_BIND;
 
     public static final String PRINT_ENDPOINT = ENDPOINT_PREFIX + PRINT_BIND;
+
+    public static final int TOKEN_EXPIRATION_TIME = 30 * 60 * 1000; // 30 minutes
+
+    public static final String DB_PATH = "db.csv";
 }
