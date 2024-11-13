@@ -20,7 +20,6 @@ public class Client {
             authService = (AuthenticationService) Naming.lookup(Config.AUTH_ENDPOINT);
             token = getToken();
             if (token != null){
-                System.out.println("Token: " + token);
                 executeUserRequests();
             } else {
                 System.out.println("Login failed");
