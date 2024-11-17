@@ -1,15 +1,31 @@
 package dk.dtu.ds;
 
+import java.beans.PropertyEditorSupport;
+import java.io.Serializable;
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 public class PrintServant extends UnicastRemoteObject implements PrintService {
-    private final AuthenticationService authService;
+    private final AuthenticationService authentication;
 
-    public PrintServant(AuthenticationService authService) throws RemoteException {
+    private final AuthorizationService authorization;
+
+    public PrintServant(AuthenticationService authentication, AuthorizationService authorization) throws RemoteException {
         super();
-        this.authService = authService;
+        this.authentication = authentication;
+        this.authorization = authorization;
+    }
+
+    private void authenticateAndAuthorize(String token, String action) throws RemoteException {
+        if (!authentication.isTokenValid(token)) {
+            throw new RemoteException("Invalid token: " + token);
+        }
+
+        if (!authorization.hasPermission(token, action)) {
+            throw new RemoteException("Not enough permission");
+        }
     }
 
     public String echo(String input) throws RemoteException {
@@ -18,9 +34,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public String print(String token, String filename, String printer) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token: " + token);
-        }
+        authenticateAndAuthorize(token, "print");
 
         String result = "Printing " + filename + " on " + printer;
 
@@ -31,18 +45,15 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public List<String> queue(String token, String printer) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "queue");
 
         return List.of("Job 1", "Job 2", "Job 3");
     }
 
     @Override
     public String topQueue(String token, String printer, int job) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "topQueue");
+
         String result = "Moving job " + job + " to the top of the queue";
 
         System.out.println(result);
@@ -52,9 +63,8 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public String start(String token) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "start");
+
         String result = "Starting print service";
 
         System.out.println(result);
@@ -64,33 +74,30 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public String stop(String token) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "stop");
+
         String result = "Stopping print service";
-
+        
         System.out.println(result);
-
+        
         return result;
     }
 
     @Override
     public String restart(String token) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
-        String result = "Restarting print service";
+        authenticateAndAuthorize(token, "restart");
 
+        String result = "Restarting print service"; 
+        
         System.out.println(result);
-
+        
         return result;
     }
 
     @Override
     public String status(String token, String printer) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "status");
+
         System.out.println("Checking status of " + printer);
 
         return "Printer " + printer + " is ready";
@@ -98,9 +105,8 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public String readConfig(String token, String parameter) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "readConfig");
+
         String result = "Reading " + parameter;
 
         System.out.println(result);
@@ -110,9 +116,8 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
     @Override
     public String setConfig(String token, String parameter, String value) throws RemoteException {
-        if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
-        }
+        authenticateAndAuthorize(token, "setConfig");
+
         String result = "Setting " + parameter + " to " + value;
 
         System.out.println(result);

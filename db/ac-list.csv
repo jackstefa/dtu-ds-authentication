@@ -1,0 +1,5 @@
+admin,all
+amir,start;stop;restart
+fede,status;readConfig;setConfig
+nathan,print;queue;topQueue;start;stop;restart
+jack,print;queue

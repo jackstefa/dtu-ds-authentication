@@ -60,6 +60,8 @@ public class Client {
         while (true) {
             System.out.println("Enter command: ");
             String command = scanner.nextLine();
+
+
             if (command.equals("exit")) {
                 return;
             }

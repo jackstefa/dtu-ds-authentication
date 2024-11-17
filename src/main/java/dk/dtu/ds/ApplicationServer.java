@@ -21,7 +21,9 @@ public class ApplicationServer {
         var authenticationServant = new AuthenticationServant((RSAPrivateKey) pair.getPrivate(), (RSAPublicKey)pair.getPublic());
         registry.rebind(Config.AUTH_BIND, authenticationServant);
 
-        var printServant = new PrintServant(authenticationServant);
+        var authorizationServant = new AuthorizationServant(authenticationServant);
+
+        var printServant = new PrintServant(authenticationServant, authorizationServant);
         registry.rebind(Config.PRINT_BIND, printServant);
 
         System.out.println("Server ready!");

@@ -30,6 +30,8 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
 
     private final HashMap<String,String> tokens = new HashMap<>();
 
+    //private final Properties properties;
+
     protected AuthenticationServant(RSAPrivateKey rsaPrivateKey, RSAPublicKey rsaPublicKey) throws RemoteException {
         super();
         this.rsaPrivateKey = rsaPrivateKey;
@@ -37,7 +39,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
     }
 
     private User getUserFromDb(String username) throws UserException {
-        try (BufferedReader br = new BufferedReader(new FileReader(Config.DB_PATH))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(Config.DB_AUTH_PATH))) {
             // we expect CSV file with the following format:
             // username, passwordSalt, passwordHash
             for (String line; (line = br.readLine()) != null; ) {
@@ -51,7 +53,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
             }
             throw new UserException(username + " not found");
         } catch (IOException e) {
-            System.out.println(Config.DB_PATH + " not found");
+            System.out.println(Config.DB_AUTH_PATH + " not found");
         }
         return null;
     }
@@ -85,10 +87,10 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
         String salt = generateSalt();
         String hash = Password.hash(password).addSalt(salt).withArgon2().getResult();
         System.out.println("Registering " + username + " with salt " + salt + " and hash " + hash);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Config.DB_PATH, true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Config.DB_AUTH_PATH, true))) {
             writer.write(username + "," + salt.replaceAll(",", Config.DB_REPLACE_COMMA) + "," + hash.replaceAll(",", Config.DB_REPLACE_COMMA) + "\n");
         } catch (IOException e1) {
-            System.out.println("Error writing to " + Config.DB_PATH);
+            System.out.println("Error writing to " + Config.DB_AUTH_PATH);
         }
 
     }
@@ -99,6 +101,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
             String token = JWT.create()
                     .withIssuer("auth0")
                     .withExpiresAt(new java.util.Date(System.currentTimeMillis() + Config.TOKEN_EXPIRATION_TIME))
+                    .withClaim("username", username)
                     .sign(algorithm);
             boolean isTokenBeenAdded = addToken(username, token); // it is ok to store with the username as kay because without private_key we cannot decode it
             return isTokenBeenAdded ? token : null;
@@ -155,6 +158,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
                         // reusable verifier instance
                         .build();
                 DecodedJWT decodedJWT = verifier.verify(token);
+                decodedJWT.getClaim("username");
                 boolean isTokenValid = decodedJWT.getExpiresAt().after(new java.util.Date());
                 if (!isTokenValid) {
                     removeToken(token);
@@ -169,5 +173,34 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
             return false;
         }
     }
+
+    @Override
+    public String getUsernameFromToken(String token) throws RemoteException {
+        try {
+            if (isTokenPresent(token)) {
+                Algorithm algorithm = Algorithm.RSA256(rsaPublicKey, rsaPrivateKey);
+                JWTVerifier verifier = JWT.require(algorithm)
+                        // specify any specific claim validations
+                        .withIssuer("auth0")
+                        // reusable verifier instance
+                        .build();
+                DecodedJWT decodedJWT = verifier.verify(token);
+                String username = decodedJWT.getClaim("username").asString();
+                boolean isTokenValid = decodedJWT.getExpiresAt().after(new java.util.Date());
+                if (!isTokenValid) {
+                    removeToken(token);
+                    return null;
+                }
+                return username;
+            } else {
+                System.out.println("Token is not present!");
+                return null;
+            }
+        } catch (JWTVerificationException exception){
+            // Invalid signature/claims
+            return null;
+        }
+    }
+
 
 }
