@@ -19,4 +19,6 @@ public class Config {
     public static final int TOKEN_EXPIRATION_TIME = 30 * 60 * 1000; // 30 minutes
 
     public static final String DB_PATH = "db.csv";
+
+    public static final String DB_REPLACE_COMMA = "_____";
 }

@@ -11,14 +11,16 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 
 import java.io.*;
 import java.io.Serializable;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.HashMap;
 import java.util.Objects;
+import java.security.SecureRandom;
+import java.util.Base64;
 
-public class AuthenticationServant implements AuthenticationService, Serializable {
+public class AuthenticationServant extends UnicastRemoteObject implements AuthenticationService, Serializable {
 
     private record User(String username, String passwordSalt, String passwordHash) { }
 
@@ -44,7 +46,7 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
                 // columns[1] is passwordSalt
                 // columns[2] is passwordHash
                 if (Objects.equals(columns[0], username)) {
-                    return new User(username, columns[1], columns[2]);
+                    return new User(username, columns[1].replaceAll(Config.DB_REPLACE_COMMA, ","), columns[2].replaceAll(Config.DB_REPLACE_COMMA, ","));
                 }
             }
             throw new UserException(username + " not found");
@@ -59,7 +61,6 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
         try {
             User user = getUserFromDb(username);
             if (user != null && Password.check(password, user.passwordHash).addSalt(user.passwordSalt).withArgon2()) {
-            //if (user != null && password.equals(user.passwordHash)) { // to test with clear password in passwordHash column in the db
                 return createSession(username);
             } else {
                 System.out.println("Invalid password or username");
@@ -71,6 +72,25 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
             System.out.println("Invalid password or username");
         }
         return null;
+    }
+
+    private static String generateSalt() {
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[16];
+        random.nextBytes(salt);
+        return Base64.getEncoder().encodeToString(salt);
+    }
+
+    public void register(String username, String password) throws RemoteException {
+        String salt = generateSalt();
+        String hash = Password.hash(password).addSalt(salt).withArgon2().getResult();
+        System.out.println("Registering " + username + " with salt " + salt + " and hash " + hash);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Config.DB_PATH, true))) {
+            writer.write(username + "," + salt.replaceAll(",", Config.DB_REPLACE_COMMA) + "," + hash.replaceAll(",", Config.DB_REPLACE_COMMA) + "\n");
+        } catch (IOException e1) {
+            System.out.println("Error writing to " + Config.DB_PATH);
+        }
+
     }
 
     private String createSession(String username) throws JWTCreationException {
@@ -90,6 +110,7 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
     }
 
     private boolean addToken(String username, String token) {
+        // One user can only have one token, so one session open at a time
         if (isTokenPresent(token)) {
             System.out.println("Last token already present");
             return false;
@@ -112,8 +133,10 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
 
     private boolean isTokenPresent(String tokenToCheck) {
         if (tokens.containsValue(tokenToCheck)) {
-            for (String user: tokens.keySet()) {
+            for (String user : tokens.keySet()) {
                 if (tokens.get(user).equals(tokenToCheck)) {
+                    System.out.println("Checking token for user: " + user);
+                    System.out.println("Token is present!");
                     return true;
                 }
             }
@@ -138,6 +161,7 @@ public class AuthenticationServant implements AuthenticationService, Serializabl
                 }
                 return isTokenValid;
             } else {
+                System.out.println("Token is not present!");
                 return false;
             }
         } catch (JWTVerificationException exception){

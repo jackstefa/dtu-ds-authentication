@@ -1,2 +1,5 @@
-username,passwordSalt,passwordHash
-admin,password,password
+admin,CBB1ECCHc1DUQ4XhezuUCQ==,$argon2id$v=19$m=15360_____t=2_____p=1$Q0JCMUVDQ0hjMURVUTRYaGV6dVVDUT09$4pdUYN4k1LHsvhX2O3ph/1Lv8ih44LT6W1Qvy/kTBrU
+amir,kL+15tcv0UWk0LSNz8vUyw==,$argon2id$v=19$m=15360_____t=2_____p=1$a0wrMTV0Y3YwVVdrMExTTno4dlV5dz09$+i8A8+kiH0LsyyfHluQFqP9NyPRIZTgl26raSdF7i/k
+fede,veIeA0zkFqv/GJTIetEY+g==,$argon2id$v=19$m=15360_____t=2_____p=1$dmVJZUEwemtGcXYvR0pUSWV0RVkrZz09$hw27dG1vML22eq+io48THB0fCbVztRpPVfX/pz2vY+s
+nathan,ZNe9LoaNh+QlaJLYwFdpEQ==,$argon2id$v=19$m=15360_____t=2_____p=1$Wk5lOUxvYU5oK1FsYUpMWXdGZHBFUT09$xpiMIBhCBhnFW9ccHbFHhBCkZUYY5Aj5WkrSYqyyY30
+jack,E7M3w3HKEs9oMKehBRCGxw==,$argon2id$v=19$m=15360_____t=2_____p=1$RTdNM3czSEtFczlvTUtlaEJSQ0d4dz09$6qQK9Yq9rsmyIL5KdIWtX9SFv9XHb4dnvH4urttWpiQ

@@ -17,12 +17,16 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
     }
 
     @Override
-    public void print(String token, String filename, String printer) throws RemoteException {
+    public String print(String token, String filename, String printer) throws RemoteException {
         if (!authService.isTokenValid(token)) {
-            throw new RemoteException("Invalid token");
+            throw new RemoteException("Invalid token: " + token);
         }
 
-        System.out.println("Printing " + filename + " on " + printer);
+        String result = "Printing " + filename + " on " + printer;
+
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
@@ -35,39 +39,51 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
     }
 
     @Override
-    public void topQueue(String token, String printer, int job) throws RemoteException {
+    public String topQueue(String token, String printer, int job) throws RemoteException {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Moving job " + job + " to the top of the queue";
 
-        System.out.println("Moving job " + job + " to the top of the queue");
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
-    public void start(String token) throws RemoteException {
+    public String start(String token) throws RemoteException {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Starting print service";
 
-        System.out.println("Starting print service");
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
-    public void stop(String token) throws RemoteException {
+    public String stop(String token) throws RemoteException {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Stopping print service";
 
-        System.out.println("Stopping print service");
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
-    public void restart(String token) throws RemoteException {
+    public String restart(String token) throws RemoteException {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Restarting print service";
 
-        System.out.println("Restarting print service");
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
@@ -75,6 +91,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        System.out.println("Checking status of " + printer);
 
         return "Printer " + printer + " is ready";
     }
@@ -84,16 +101,22 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Reading " + parameter;
 
-        return "Value of " + parameter;
+        System.out.println(result);
+
+        return result;
     }
 
     @Override
-    public void setConfig(String token, String parameter, String value) throws RemoteException {
+    public String setConfig(String token, String parameter, String value) throws RemoteException {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+        String result = "Setting " + parameter + " to " + value;
 
-        System.out.println("Setting " + parameter + " to " + value);
+        System.out.println(result);
+
+        return result;
     }
 }
