@@ -15,20 +15,35 @@ public class AuthorizationServant implements AuthorizationService {
     }
 
     public boolean hasPermission(String token, String action) throws RemoteException {
+        // find the role associated with username
         String username = authenticationService.getUsernameFromToken(token);
         System.out.println("User " + username + " is trying to do " + action + " command!");
-        String[] permissions = getPermissionListFromDb(username);
-        if (permissions.length == 0) {
-            return false;
+        String[] roles = getRolesFromDb(username);
+
+        // check if the role has the permission to do the action
+        for (String role : roles) {
+            String[] permissions = getRolePermissionsFromDb(role);
+            if (permissions.length == 0) {
+                continue;
+            }
+            if (Arrays.asList(permissions).contains("all") || Arrays.asList(permissions).contains(action)) {
+                return true;
+            }
         }
-        if (permissions[0].equals("all")) {
-            return true;
-        }
-        return Arrays.asList(permissions).contains(action);
+        return false;
     }
 
-    private String[] getPermissionListFromDb(String username) {
-        String actionsToParse = readFromCsv(Config.DB_PERMISSIONS_PATH, username);
+    private String[] getRolesFromDb(String username) {
+        String rolesToParse = readFromCsv(Config.DB_USERS_ROLES_PATH, username);
+        if (rolesToParse == null) {
+            return new String[]{};
+        }
+        System.out.println("User " + username + " has role" + (rolesToParse.split(";").length > 1 ? "s" : "") + ": " + rolesToParse.replaceAll(";", " & "));
+        return rolesToParse.split(";");
+    }
+
+    private String[] getRolePermissionsFromDb(String role) {
+        String actionsToParse = readFromCsv(Config.DB_ROLES_PERMISSIONS_PATH, role);
         if (actionsToParse == null) {
             return new String[]{};
         }

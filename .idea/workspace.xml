@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/db/role-ac-list.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/user-role.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthenticationServant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthorizationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthorizationServant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/TokenGenerator.java" beforeDir="false" />
     </list>
     <list id="9b299e3a-4195-4f76-b6ef-076f3d55f6e3" name="Changes by amirhosein" comment="" />
-    <list id="fb819aba-5e86-4504-a6df-3bdf93e442cf" name="Changes by federicomarra" comment="" />
-    <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="" />
+    <list id="fb819aba-5e86-4504-a6df-3bdf93e442cf" name="Changes by federicomarra" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/Config.java" afterDir="false" />
+    </list>
+    <list id="84f4c9bf-31a2-4d8d-919f-69f915fbf659" name="Changes by Giacomo" comment="" />
+    <list id="cf09c790-5c02-4297-9220-62ad69c3da82" name="Changes by natha" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthorizationServant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthorizationServant.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,8 +29,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,6 +49,18 @@
     &quot;accountId&quot;: &quot;febb9908-f6a3-4f27-94c5-aae5af9602fd&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/dk/dtu/ds/AuthorizationServant.java">
+      <ranges>
+        <range start1="17" end1="17" start2="17" end2="18" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="19" end1="22" start2="20" end2="31" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="23" end1="27" start2="32" end2="33" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="29" end1="32" start2="35" end2="38" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="34" end1="35" start2="40" end2="42" changelist="067fcebb-1e8d-4b67-aff9-78fbc0bbb8e8" />
+        <range start1="36" end1="36" start2="43" end2="51" changelist="cf09c790-5c02-4297-9220-62ad69c3da82" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -54,30 +73,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApplicationServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/federicomarra/Documents/GitHub/ds-authentication&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApplicationServer.executor": "Run",
+    "Application.Client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/amirhosein/Documents/DTU/Data Security/Assignment 2/dtu-ds-authentication/db",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Giacomo/IdeaProjects/dtu-ds-authentication/src/main/java/dk/dtu/ds/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="dk.dtu.ds" />
     </key>

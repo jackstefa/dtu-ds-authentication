@@ -1,0 +1,5 @@
+admin,all
+janitor,start;stop;restart
+serviceTechnician,status;readConfig;setConfig
+powerUser,print;queue;topQueue;start;stop;restart
+normalUser,print;queue

@@ -20,7 +20,9 @@ public class Config {
 
     public static final String DB_AUTH_PATH = "db/auth.csv";    // users and passwords
 
-    public static final String DB_PERMISSIONS_PATH = "db/ac-list.csv";  // users and actions
+    public static final String DB_USERS_ROLES_PATH = "db/user-role.csv";  // users and actions
+
+    public static final String DB_ROLES_PERMISSIONS_PATH = "db/role-ac-list.csv";  // users and actions
 
     public static final String DB_REPLACE_COMMA = "_____";
 }
