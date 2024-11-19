@@ -16,7 +16,7 @@ public class AuthorizationServant implements AuthorizationService {
 
     public boolean hasPermission(String token, String action) throws RemoteException {
         String username = authenticationService.getUsernameFromToken(token);
-        System.out.println("User " + username + " is trying to do " + action + " command!");
+        System.out.println("User " + username + " is trying to do " + action + " command! " + "at " + new java.util.Date());
         String[] permissions = getPermissionListFromDb(username);
         if (permissions.length == 0) {
             return false;
