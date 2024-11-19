@@ -24,7 +24,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Printing " + filename + " on " + printer;
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
@@ -34,6 +34,8 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
+
+        System.out.println("Returning queue at " + new java.util.Date());
 
         return List.of("Job 1", "Job 2", "Job 3");
     }
@@ -45,7 +47,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Moving job " + job + " to the top of the queue";
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }
@@ -57,7 +59,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Starting print service";
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }
@@ -69,7 +71,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Stopping print service";
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }
@@ -81,7 +83,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Restarting print service";
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }
@@ -91,7 +93,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         if (!authService.isTokenValid(token)) {
             throw new RemoteException("Invalid token");
         }
-        System.out.println("Checking status of " + printer);
+        System.out.println("Checking status of " + printer + " at " + new java.util.Date());
 
         return "Printer " + printer + " is ready";
     }
@@ -103,7 +105,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Reading " + parameter;
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }
@@ -115,7 +117,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
         String result = "Setting " + parameter + " to " + value;
 
-        System.out.println(result);
+        System.out.println(result + " at " + new java.util.Date());
 
         return result;
     }

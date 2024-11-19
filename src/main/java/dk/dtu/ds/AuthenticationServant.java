@@ -61,6 +61,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
         try {
             User user = getUserFromDb(username);
             if (user != null && Password.check(password, user.passwordHash).addSalt(user.passwordSalt).withArgon2()) {
+                System.out.println("\nUser " + username + " logged in at " + new java.util.Date());
                 return createSession(username);
             } else {
                 System.out.println("Invalid password or username");
@@ -135,7 +136,7 @@ public class AuthenticationServant extends UnicastRemoteObject implements Authen
         if (tokens.containsValue(tokenToCheck)) {
             for (String user : tokens.keySet()) {
                 if (tokens.get(user).equals(tokenToCheck)) {
-                    System.out.println("Checking token for user: " + user);
+                    System.out.println("\nChecking token for user: " + user);
                     System.out.println("Token is present!");
                     return true;
                 }
