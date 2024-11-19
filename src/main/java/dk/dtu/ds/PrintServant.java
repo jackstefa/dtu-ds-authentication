@@ -24,6 +24,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
         }
 
         if (!authorization.hasPermission(token, action)) {
+            System.out.println("Not enough permission");
             throw new RemoteException("Not enough permission");
         }
     }
@@ -38,7 +39,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Printing " + filename + " on " + printer;
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
@@ -46,6 +47,8 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
     @Override
     public List<String> queue(String token, String printer) throws RemoteException {
         authenticateAndAuthorize(token, "queue");
+
+        System.out.println("Returning queue at " + new java.util.Date());
 
         return List.of("Job 1", "Job 2", "Job 3");
     }
@@ -56,7 +59,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Moving job " + job + " to the top of the queue";
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
@@ -67,7 +70,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Starting print service";
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
@@ -78,7 +81,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Stopping print service";
         
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
         
         return result;
     }
@@ -89,7 +92,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Restarting print service"; 
         
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
         
         return result;
     }
@@ -98,7 +101,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
     public String status(String token, String printer) throws RemoteException {
         authenticateAndAuthorize(token, "status");
 
-        System.out.println("Checking status of " + printer);
+        System.out.println("Checking status of " + printer  + " at " + new java.util.Date());
 
         return "Printer " + printer + " is ready";
     }
@@ -109,7 +112,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Reading " + parameter;
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
@@ -120,7 +123,7 @@ public class PrintServant extends UnicastRemoteObject implements PrintService {
 
         String result = "Setting " + parameter + " to " + value;
 
-        System.out.println(result);
+        System.out.println(result  + " at " + new java.util.Date());
 
         return result;
     }
